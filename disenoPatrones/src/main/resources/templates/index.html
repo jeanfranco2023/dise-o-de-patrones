@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Login</title>
+</head>
+<body>
+    <form th:action="@{/login}" th:object="${login}" method="post" >
+        <h2 class="login__title">Login</h2>
+            <div class="container">
+                <div class="login__user">
+                <i class='bx bx-user login__icon'></i>
+                <input type="text" placeholder="Username" th:field="*{email}" class="login__input"><br>
+            </div>
+            <div class="login__user">
+                    <i class='bx bxs-lock-alt login__icon'></i>
+                    <input type="password"placeholder="Password" th:field="*{password}" class="login__input">
+            </div>
+            <div class="recuperacion">
+                    <a href="/###" class="login__recuperation">¿Olvidaste tu contraseña?</a><br>
+                    </div>
+                    </div>
+                    <button type="submit" class="login__button">Login</button>
+            <div>
+                        <p>No tienes cuenta?<a href="/registro" class="login__register">Registrate</a></p>
+    </form>
+</body>
+</html>
