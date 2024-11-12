@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+    <link rel="stylesheet" href="/css/registro.css">
+    <script src="/js/menu.js"></script>
+    <title>Registro de usuarios</title>
+</head>
+<body>
+    <header> 
+        <p>Ferreteria TUSIGOOD</p>
+        <div class="user-menu">
+            <p>Bienvenido Usuario</p>
+            <img class="user-img" src="/user-circle-solid-24.png" alt="USER.PET" width="50" height="50">
+            <div class="dropdown-menu">
+                <a href="#">Registrar producto</a>
+                <a href="#">Resumen de ventas</a>
+                <a href="#">Cerrar Sesión</a>
+            </div>
+        </div> 
+    </header>
+
+    <main>
+    <h1>Registro de usuarios</h1>
+    <form th:action="@{/usuarios/save}" th:object="${usuario}" method="POST">
+
+        <div class="busqueda">
+            <input type="number" name="txtDNI" id="DNI" placeholder="N° DNI">
+            <button type="button">Buscar</button>
+        </div>
+
+        <input type="hidden" th:field="*{usuarioId}"/>
+
+        <div class="container">
+            <div class="input-container">
+                <label for="nombre">Nombre:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                <input type="text" th:field="*{nombre}" required><br>
+
+                <label for="apellido">Apellido:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                <input type="text" th:field="*{apellido}" required><br>
+
+                <label for="apellido">Telefono:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                <input type="text" th:field="*{telefono}" required><br>
+
+                <label for="cargo">Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>    
+                <input type="email" th:field="*{email}" required><br>
+
+                <label for="cargo">Contraseña:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                <input type="password" th:field="*{password}" required><br>
+
+                <label>Cargo:</label>
+                <select th:field="*{isAdmin}">
+                    <option value="true">Administrador</option>
+                    <option value="false">Empleado</option>
+                </select>
+            </div>
+
+            <div class="button-container">
+                <button type="submit" class="btn"><i class="fas fa-save mr-2"></i>&nbsp;&nbsp;Guardar</button>
+                <button type="reset" class="btn"><i class="fas fa-eraser mr-2"></i>&nbsp;&nbsp;&nbsp;Limpiar</button>
+            </div>
+        </div>
+
+                <h1>Tabla de usuarios</h1>
+                <table class="tabla">
+                    <tr>
+                        <th>Id</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Telefono</th>
+                        <th>Email</th>
+                        <th>Cargo</th>
+                        <th>Acciones</th>
+                    </tr>
+                    <tr th:each="usuario : ${usuarios}">
+                        <td th:text="${usuario.usuarioId}"></td>
+                        <td th:text="${usuario.nombre}"></td>
+                        <td th:text="${usuario.apellido}"></td>
+                        <td th:text="${usuario.telefono}"></td>
+                        <td th:text="${usuario.email}"></td>
+                        <td th:text="${usuario.isAdmin}"></td>
+                        <td>
+                            <a th:href="@{'/usuarios/edit/' + ${usuario.usuarioId}}" class="btn-editar">Editar</a>
+                            <form th:action="@{/usuarios/eliminar/{id}(id=${usuario.usuarioId})}" method="post" style="display:inline;">
+                                <button type="submit" class="btn-eliminar" onclick="return confirm('¿Seguro que deseas eliminar este usuario?');">Eliminar</button>
+                            </form>
+                        </td>
+                    </tr>
+    </form>
+        
+</main>
+    
+
+    
+</body>
+</html> 

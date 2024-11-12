@@ -1,0 +1,108 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: #d2d2d2;
+}
+
+.main-container {
+    display: flex;
+    width: 80%;
+    max-width: 800px;
+    height: 80vh;
+    max-height: 700px;
+    box-shadow: 10 10 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.sidebar {
+    width: 40%;
+   /* background-color: #1a2c5b;*/
+    background-image: url("../img/ferreet.jpg"); 
+    background-size: cover;
+    background-position: center;
+}
+
+.login-box {
+    width: 60%;
+    padding: 20px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    text-align: center;
+    color: #1a2c5b;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 300px;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+    width: 100%;
+    text-align: left;
+}
+
+.dni-input {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    width: 105%;
+}
+
+.dni-input span {
+    padding: 8px 12px;
+    background-color: #1a2c5b;
+    color: #fff;
+    font-weight: bold;
+}
+
+.dni-input input {
+    flex: 1;
+    padding: 8px;
+    border: none;
+    outline: none;
+}
+
+input[type="password"] {
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    width: 100%;
+}
+
+button {
+    padding: 10px;
+    width: 100%;
+    background-color: #1a2c5b;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0f2046;
+}
+
