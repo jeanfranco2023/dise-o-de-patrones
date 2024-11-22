@@ -9,6 +9,4 @@ import com.disenoPatrones.entity.usuario;
 public interface UsuarioRepository extends JpaRepository<usuario, Integer> {
 
     Optional<usuario> findByEmail(String email);
-
-    
 }

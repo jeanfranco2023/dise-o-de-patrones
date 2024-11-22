@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Productos</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="menu.js"></script>
+</head>
+<body>
+    <header>
+        <p>Ferreteria TUSIGOOD</p>
+        <div class="user-menu">
+            <p>Bienvenido Usuario</p>
+            <img class="user-img" src="../img/user.png" alt="USER.PET" width="50" height="50">
+            <div class="dropdown-menu">
+                <a th:href="@{/registroProducto}">Registrar producto</a>
+                <a th:href="@{/registrarCliente}">Registrar cliente</a>
+                <a href="#">Registrar venta</a>
+                <a href="#">Resumen de ventas</a>
+                <a href="#">Cerrar Sesión</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <h1>Registro de Productos</h1>
+        <form th:action="@{/registrar/producto}" th:object="${producto}" method="post">
+            <input type="hidden" th:field="*{idProducto}" />
+            <div>
+                <label for="CodigoProducto">Código del producto:</label>
+                <input type="text" th:field="*{codigoProducto}" required />
+            </div>
+            <div>
+                <label for="productName">Nombre del Producto:</label>
+                <input type="text" th:field="*{nombreProducto}" required />
+            </div>
+            <div>
+                <label for="productDescription">Descripción del Producto:</label>
+                <select th:field="*{descripcionProducto}" required>
+                    <option value="Materiales">Materiales</option>
+                    <option value="Herramientas">Herramientas</option>
+                </select>
+            </div>
+            <div>
+                <label for="productPrice">Precio del Producto:</label>
+                <input type="number" step="0.1" th:field="*{precioProducto}" required />
+            </div>
+            <div>
+                <label for="productStock">Stock del Producto:</label>
+                <input type="number" th:field="*{stockProducto}" required />
+            </div>
+            <div>
+                <button type="submit">Registrar Producto</button>
+            </div>
+        </form>
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>Código</th>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Precio</th>
+                <th>Stock</th>
+                <th>Actualizar Stock</th>
+            </tr>
+            <tr th:each="producto : ${productos}">
+                <td th:text="${producto.idProducto}"></td>
+                <td th:text="${producto.codigoProducto}"></td>
+                <td th:text="${producto.nombreProducto}"></td>
+                <td th:text="${producto.descripcionProducto}"></td>
+                <td th:text="${producto.precioProducto}"></td>
+                <td th:text="${producto.stockProducto}"></td>
+                <td>
+                    <!-- Campo de entrada y botón para actualizar el stock -->
+                    <form th:action="@{/productos/updateStock}" method="post">
+                        <!-- Campo oculto para enviar el ID del producto -->
+                        <input type="hidden" name="id" th:value="${producto.idProducto}" />
+                        <!-- Campo para ingresar el incremento del stock -->
+                        <input type="number" id="stockIncremento" name="stockIncremento" min="1" required />
+                        <button type="submit" class="btn-actualizar">Actualizar Stock</button>
+                    </form>
+                </tr>
+        </table>
+    </main>
+</body>
+</html>

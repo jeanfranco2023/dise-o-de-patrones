@@ -1,0 +1,372 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background: #f5f5f5;
+}
+
+header{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between; 
+    background: #1b378d;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding-bottom: 20px;
+    padding-top: 20px;
+    padding-left: 30px;
+    padding-right: 60px;
+    height: 70px;
+}
+
+header p{
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 30px;
+    font-weight: 500;
+    margin-left: 30px;
+}
+
+
+.user-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* Asegura que el dropdown-menu se posicione en relación a este contenedor */
+}
+
+.user-menu p {
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    margin-right: 10px;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 50px; /* Esto asegura que el menú se coloque justo debajo del header o botón */
+    right: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 4px 8px 16px 4px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    width: 180px;
+    border-radius: 8px;
+    margin-right: -54px;
+}
+
+.dropdown-menu a {
+    color: black;
+    padding: 12px 16px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-menu a:hover {
+    background-color: #b2b9d5;
+    border-radius: 8px;
+}
+
+.dropdown-menu.show {
+    display: block;
+}*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background: #f5f5f5;
+}
+
+header{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between; 
+    background: #1b378d;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding-bottom: 20px;
+    padding-top: 20px;
+    padding-left: 30px;
+    padding-right: 60px;
+    height: 70px;
+}
+
+header p{
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 30px;
+    font-weight: 500;
+    margin-left: 30px;
+}
+
+
+.user-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* Asegura que el dropdown-menu se posicione en relación a este contenedor */
+}
+
+.user-menu p {
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    margin-right: 10px;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 50px; /* Esto asegura que el menú se coloque justo debajo del header o botón */
+    right: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 4px 8px 16px 4px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    width: 180px;
+    border-radius: 8px;
+    margin-right: -54px;
+}
+
+.dropdown-menu a {
+    color: black;
+    padding: 12px 16px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-menu a:hover {
+    background-color: #b2b9d5;
+    border-radius: 8px;
+}
+
+.dropdown-menu.show {
+    display: block;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+.busquedaDatos{
+    display: flex-end;
+    justify-content: center;
+    align-items: center;
+    margin-right: 80px;
+    margin-left: 20px;
+}
+.busquedaDatos .dni{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.busquedaDatos input{
+    width: 200px;
+    height: 30px;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border: 1px solid #1b378d;
+    padding-left: 10px;
+    margin-left: 10px;
+    margin-right: 20px;
+}
+
+#dni{
+    width: 200px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid #1b378d;
+    margin-left: 18px;
+    margin-right: 25px;
+}   
+
+.busquedaDatos label{
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: black;
+    margin-right: 10px;
+}
+
+.busquedaDatos button{
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid #1b378d;
+    background: #1b378d;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.busquedaDatos button:hover{
+    background: #072198;
+}
+
+.busquedaDatos .fecha{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.busquedaDatos .fecha label{
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: black;
+    margin-right: 128px;
+}
+
+.botones{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+
+.botones button{
+    width: 150px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid #1b378d;
+    background: #1b378d;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.datosRecopilados{ 
+    width: 600px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 50px;
+}
+
+.datosRecopilados .datos{
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgb(0, 0, 0);
+    margin-bottom: 20px;
+}
+
+.datosRecopilados input{
+    width: 200px;
+    height: 30px;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border: 1px solid #1b378d;
+    padding-left: 10px;
+    margin-left: 10px;
+}
+
+.datosRecopilados span{
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: black;
+    margin-bottom: 30px;
+}
+
+.datosRecopilados #clienteNombre{
+    width: 200px;
+    height: 30px;
+    border-radius: 5px;
+    margin-left: 110px;
+}
+
+.datosRecopilados #productoNombre{
+    width: 200px;
+    height: 30px;
+    border-radius: 5px;
+    margin-left: 85px;
+}
+
+.datosRecopilados #precio{
+    width: 200px;
+    height: 30px;
+    border-radius: 5px;
+    margin-left: 44px;
+}
+
+.datosRecopilados #stock{
+    width: 200px;
+    height: 30px;
+    border-radius: 5px;
+    margin-left: 134px;
+}
+
+.datosRecopilados #descripcion{
+    width: 200px;
+    height: 30px;
+    border-radius: 5px;
+    margin-left: 45px;
+}
+
+table{
+    width: 100%;
+    border: 2px solid #1b378d;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+table thead{
+    background: #1b378d;
+    color: white;
+}
+
+table th, td{
+    border: 2px solid rgb(27, 55, 141);
+    padding: 8px;
+    text-align: center;
+}
+
+form button[type="submit"]{
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid #1b378d;
+    background: #1b378d;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+}

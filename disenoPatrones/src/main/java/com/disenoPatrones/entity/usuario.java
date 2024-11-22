@@ -11,7 +11,7 @@ import jakarta.persistence.GenerationType;
 public class usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Integer usuarioId;
 
     private String nombre;
 
@@ -23,26 +23,29 @@ public class usuario {
     private String email;
     
     private String password;
-
-    private String rol;
+    
+    @Column(name = "Es_administrador")
+    private Boolean isAdmin;
 
     public usuario() {
-    }
+    }   
 
-    public usuario(String nombre, String apellido, String telefono, String email, String password, String rol) {
+    public usuario(Integer usuarioId, String nombre, String apellido, String telefono, String email, String password, Boolean isAdmin) {
+        this.usuarioId = usuarioId;
         this.nombre = nombre;
         this.apellido = apellido;
         this.telefono = telefono;
         this.email = email;
         this.password = password;
-        this.rol = rol;
-    }
-    public Integer getId() {
-        return id;
+        this.isAdmin = isAdmin;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public Integer getUsuarioId() {
+        return usuarioId;
+    }
+
+    public void setUsuarioId(Integer usuarioId) {
+        this.usuarioId = usuarioId;
     }
 
     public String getNombre() {
@@ -85,14 +88,12 @@ public class usuario {
         this.password = password;
     }
 
-    public String getRol() {
-        return rol;
+    public Boolean getIsAdmin() {
+        return isAdmin;
     }
 
-    public void setRol(String rol) {
-        this.rol = rol;
+    public void setIsAdmin(Boolean isAdmin) {
+        this.isAdmin = isAdmin;
     }
-
-
 
 }

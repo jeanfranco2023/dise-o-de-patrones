@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Principal Admin</title>
+    <link rel="stylesheet" href="/css/principalAdmin.css">
+    <script src="/js/menu.js"></script>
+</head>
+<body>
+    <header>
+        <p>Ferreteria TUSIGOOD</p>
+        <div class="user-menu">
+            <nav class="nav">
+                <a th:href="@{/registro}">Registrar de usuarios</a>
+                <a href="#">Resumen de ventas</a>
+            </nav>
+            <p>Bienvenido Usuario</p>
+            <img class="user-img" src="../img/user.png" alt="USER.PET" width="50" height="50">
+            <div class="dropdown-menu">
+                <a th:href="@{/registroProducto}">Registrar producto</a>
+                <a th:href="@{/registrarCliente}">Registrar cliente</a>
+                <a th:href="@{/registroVentas}">Registrar venta</a>
+                <a href="#">Cerrar Sesión</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <h2>Gráfico de Ventas por Cliente</h2>
+        <canvas id="ventasChart" width="400" height="400"></canvas>
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+        <script src="/js/ventas.js"></script>
+    
+        <script>
+            const ventasPorCliente = /*[[${ventasPorCliente}]]*/ {};
+        </script>
+    <footer>
+       
+    </footer>
+</body>
+</html>

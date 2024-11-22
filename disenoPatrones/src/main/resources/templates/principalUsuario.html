@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Faculty+Glyphic&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        </style>
+    <link rel="stylesheet" href="/css/registroVentas.css">
+        <script src="/js/menu.js"></script>
+    <title>Registro de ventas</title>
+</head>
+<header>
+    <p>Ferreteria TUSIGOOD</p>
+    <div class="user-menu">
+        <p>Bienvenido Usuario</p>
+        <img class="user-img" src="../img/user.png" alt="USER.PET" width="50" height="50">
+        <div class="dropdown-menu">
+            <a th:href="@{/registroProducto}">Registrar producto</a>
+            <a th:href="@{/registrarCliente}">Registrar cliente</a>
+            <a th:href="@{/registroVentas}">Registrar venta</a>
+            <a th:href="@{/index}">Cerrar Sesión</a>
+        </div>
+    </div>
+</header>
+<form th:action="@{/registra/venta}" method="post">
+    <h1>Registro de Ventas TUSIGOOD</h1>
+    <h3>Ingrese los datos requeridos</h3>
+    <div class="container">
+        <div class="busquedaDatos"> 
+            <div class="dni">
+                <!-- Búsqueda de Cliente por DNI -->
+                <label for="dni">DNI del Cliente:&nbsp;</label>
+                <input type="text" id="dni" name="dni" required>
+                <button type="button" id="buscarClienteBtn">Buscar</button><br>
+            </div>
+
+            <div class="producto">
+                <!-- Búsqueda de Producto por Código -->
+                <label for="codigoProducto">Código Producto:</label>
+                <input type="text" id="codigoProducto" name="codigoProducto" required>
+                <button type="button" id="buscarProductoBtn">Buscar</button><br>
+            </div>
+            <div class="fecha">
+                <label for="">Fecha:</label>
+                <input type="date" name="fecha" id="fecha">
+            </div>
+            <div class="botones">
+                <button type="button" id="agregarBtn">Agregar</button>
+                <button type="button">Limpiar</button>
+                <button type="button">Eliminar</button>
+            </div>
+        </div>
+
+        <div class="datosRecopilados">
+            <!-- Información del Producto -->
+            <div class="datos">
+                <label for="cliente">Nombre del cliente:</label>
+                <span id="clienteNombre"></span><br>
+            </div>
+            <div class="datos">
+                <label for="producto">Nombre del producto:</label>
+                <span id="productoNombre" readonly></span><br>
+            </div>
+            <div class="datos">
+                <label for="precio">Precio (por unidad o kilo):</label>
+                <span id="precio" readonly></span> <br>
+            </div>
+            <div class="datos">
+                <label for="stock">Stock disponible:</label>
+                <span id="stock" readonly></span><br>
+            </div>
+            <div class="datos">
+                <label for="descripcion">Descripción del producto:</label>
+                <span id="descripcion" readonly></span><br>
+            </div>
+            <div class="datos">
+                <label for="cantidad">Cantidad:</label>
+                <input type="number" id="cantidad" name="cantidad">
+                <span id="unidad">unidades/kilos</span><br>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tabla con resumen de la compra -->
+    <table border="1">
+        <tr>
+            <th>Producto</th>
+            <th>Precio</th>
+            <th>Cantidad</th>
+            <th>Precio Total</th>
+        </tr>
+        <tbody id="tablaDetalles">
+        </tbody>
+    </table>
+    
+    <!-- Agregar un input oculto para almacenar los productos -->
+    <input type="hidden" id="nombreCliente" name="nombreCliente">
+    <input type="hidden" id="productosJson" name="productosJson">
+    
+    <button type="submit">Registrar Venta</button>
+</form>
+
+        <script src="/js/ActualizarTabla.js"></script>
+        <script src="/js/BuscarDatos.js"></script>
+    </body>
+</html>

@@ -1,0 +1,127 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: #d2d2d2;
+}
+
+.main-container {
+    display: flex;
+    width: 80%;
+    max-width: 800px;
+    height: 80vh;
+    max-height: 700px;
+    box-shadow: 10 10 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.sidebar {
+    width: 40%;
+   /* background-color: #1a2c5b;*/
+    background-image: url("../img/ferreet.jpg"); 
+    background-size: cover;
+    background-position: center;
+}
+
+.login-box {
+    width: 60%;
+    padding: 20px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+h1 {
+    text-align: center;
+    font-family: "Kanit";
+    color: #1D039C;
+    margin-bottom: 15px;
+}
+h2 {
+    margin-top: -30px;
+    text-align: center;
+    font-family: "Kanit";
+    color: #0a0a0a;
+    margin-bottom: 3px;
+    
+}
+
+form {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 300px;
+}
+
+label {
+    margin-bottom: 5px;
+    font-family:  "Faculty Glyphic";
+    font-weight: bold;
+    color: #333;
+    width: 100%;
+    text-align: left;
+}
+
+.dni-input {
+    display: flex;
+    align-items: center;
+    font-family:  "Faculty Glyphic";
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    width: 105%;
+}
+.dni-input #dni {
+    
+    font-family:  "Faculty Glyphic";
+    
+}
+
+.dni-input span {
+    padding: 8px 12px;
+    font-family:  "Faculty Glyphic";
+    background-color: #1D039C;
+    color: #fff;
+    font-weight: bold;
+}
+
+.dni-input input {
+    flex: 1;
+    padding: 8px;
+    border: none;
+    outline: none;
+}
+
+input[type="password"] {
+    padding: 8px;
+    font-family:  "Faculty Glyphic";
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    width: 100%;
+}
+
+button {
+    padding: 10px;
+    margin-top: 70px;
+    font-family: "Faculty Glyphic";
+    width: 100%;
+    background-color: #1D039C;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0f2046;
+}
